@@ -31,7 +31,9 @@
     <body>
       @foreach($materias as $materia)
         <tr>
-          <td>{{ $materia->id }}</td>
+          <td>
+            <a class="btn btn-sm btn-info" href="{{route('materia.show', $materia->id )}}"> {{ $materia->id }}</a>
+          </td>
           <td>{{ $materia->materia }}</td>
           <td>{{ $materia->crn }}</td>
           <td>{{ $materia->hora_inicio }}</td>

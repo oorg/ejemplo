@@ -15,7 +15,8 @@ class AlumnoController extends Controller
     public function index()
     {
         //
-      return view ('alumno.indexAlumno');
+      $alumnos = Alumno::all();
+      return view ('alumno.indexAlumno', compact('alumnos') );
     }
 
     /**
@@ -25,7 +26,8 @@ class AlumnoController extends Controller
      */
     public function create()
     {
-        //
+        //      
+        return view('alumno.formAlumno');
     }
 
     /**
@@ -37,6 +39,9 @@ class AlumnoController extends Controller
     public function store(Request $request)
     {
         //
+      Alumno::create($request->all());
+      
+      return redirect()->route('alumno.index');
     }
 
     /**

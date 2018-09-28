@@ -43,7 +43,19 @@ class MateriaController extends Controller
     {
         //dd('llego al store'); //terminar la aplicacion
         //dd($request);
-       dd($request->all());
+       //dd($request->all()); //ver los datos del formulario
+      
+      
+      /*$materia = new Materia();  // insercion en la base de datos
+      $materia->user_id = 1;
+      $materia->materia = $request->input('materia');
+      $materia->crn = $request->input('nrc');
+      $materia->hora_inicio = $request->input('hora_inicio');
+      $materia->save();
+      */
+      Materia::create($request->all());
+      
+      return redirect()->route('materia.index');
     }
 
     /**
@@ -53,11 +65,14 @@ class MateriaController extends Controller
      * @return \Illuminate\Http\Response
      */
     //public function show(Materia $materia)
-    public function show($id)
+    public function show(Materia $materium)
+    #public function show($materium)
     {
         //
         //return view('materias.showMateria');
-        return view('materias.showMateria', compact('id'));//paso de variable a la vista
+        #$miMateria = Materia::find($materium);
+        #return view('materias.showMateria')->with(['materia' => $miMateria]); //,compact('$materium'));//paso de variable a la vista
+        return view('materias.showMateria')->with(['materia' => $materium]); //,compact('$materium'));//paso de variable a la vista
     }
 
     /**
@@ -94,8 +109,10 @@ class MateriaController extends Controller
      * @param  \App\Materia  $materia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Materia $materia)
+    public function destroy(Materia $materium)
     {
         //
+      $materium->delete();
+      return redirect()->route('materia.index');
     }
 }

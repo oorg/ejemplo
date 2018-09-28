@@ -20,6 +20,15 @@ class CreaTablasMaterias extends Migration
             $table->string('crn', 20);
             $table->time('hora_inicio');
             $table->timestamps();
+          
+          /*
+            $table->increments('id');
+            $table->integer('nombre_materia')->unsigned();
+            $table->string('crn', 10);
+            $table->string('secction', 5);
+            $table->string('horario');
+            $table->timestamps();
+          */
         });
     }
 

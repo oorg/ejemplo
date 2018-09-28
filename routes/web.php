@@ -74,6 +74,7 @@ Route::post('/materia/update', function(){
 */
 
 Route::resource('materia', 'MateriaController');
+Route::resource('alumno', 'AlumnoController');
 
 
 Route::get('/', function () {
@@ -92,3 +93,31 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/usuario', 'UsuarioController@index');
 //Route::get('/dependencia', 'DependenciaController@index');
 //Route::get('/empleado', 'EmpleadoController@index');
+
+
+
+
+/*
+git clone https://github.com/oorg/ejemplo.git //nombre por default
+git clone https://github.com/oorg/ejemplo.git  otro_npmbre//cambiar nombre
+
+clonar las librerias
+a donde se clono el proyecto
+cd otro_nombre
+conposer install
+
+archivo con llaves
+descargar el original
+php artisan key:generate
+
+
+permisos para linux
+set permissions
+cd
+sudo chgrp
+sudo chmod
+
+para elegir cual utilizar comando 
+sudo nano...
+reiniciar apache
+sudo ... reiniciar
